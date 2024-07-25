@@ -2,32 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  scrollbar-width: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* background-image: url(https://img.freepik.com/free-photo/top-view-old-film-strip_1150-6697.jpg?t=st=1721823307~exp=1721826907~hmac=a88ecfac76a0336a28d05e1c45a055498bb8c484ef009040e36cbb95a5378c9f&w=996); */
+  background-repeat: no-repeat;
+  background-color: #e9b393;
+  background-size: cover;
+  background-position: center center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.with-shadow {
+  @apply flex items-center gap-2 font-medium py-1 px-3 sm:py-1 sm:px-6 border border-black shadow-[-7px_7px_0px_#000];
+}
+
+.with-shadow:hover {
+  @apply transition-transform duration-300 transform hover:-translate-x-2 hover:translate-y-2 shadow-none;
 }
