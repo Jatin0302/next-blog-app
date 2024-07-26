@@ -71,7 +71,7 @@ const Page = ({ params }) => {
 
         <div className="my-24">
           <p className="text-black font-semibold my-4">
-            Share this article on social media
+            Share this article on social medias
           </p>
           <div className="flex">
             <Image src={assets.facebook_icon} alt="" width={50} />
